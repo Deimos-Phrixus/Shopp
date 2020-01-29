@@ -6,4 +6,4 @@ RUN apk add freetype libpng libjpeg-turbo freetype-dev libpng-dev libjpeg-turbo-
 RUN docker-php-ext-install -j$(nproc) iconv
 RUN docker-php-ext-configure gd --with-jpeg=/usr/include/ --with-freetype=/usr/include/
 RUN docker-php-ext-install -j$(nproc) gd
-COPY php.ini /usr/local/etc/php/php.ini
+COPY php/php.ini /usr/local/etc/php/php.ini

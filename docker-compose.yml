@@ -3,7 +3,8 @@ version: '3.7'
 services:
   apache:
     build:
-      context: ./apache
+      context: ./
+      dockerfile: apache.Dockerfile
     restart: always
     ports:
       - 80:80
@@ -19,7 +20,8 @@ services:
       - mysql
   php:
     build:
-      context: ./php
+      context: ./
+      dockerfile: php.Dockerfile
     restart: always
     networks: 
       - backend
@@ -28,7 +30,8 @@ services:
       - ./tmp:/usr/local/tmp
   mysql:
     build:
-      context: ./mysql
+      context: ./
+      dockerfile: mysql.Dockerfile
     restart: always
     networks:
       - backend

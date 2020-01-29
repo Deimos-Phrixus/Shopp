@@ -2,7 +2,8 @@ version: '3.7'
 
 services:
   apache:
-    build: './apache'
+    build:
+      context: ./apache
     restart: always
     ports:
       - 80:80
@@ -17,7 +18,8 @@ services:
       - php
       - mysql
   php:
-    build: './php'
+    build:
+      context: ./php
     restart: always
     networks: 
       - backend
@@ -25,7 +27,8 @@ services:
       - ./public_html:/usr/local/apache2/htdocs
       - ./tmp:/usr/local/tmp
   mysql:
-    build: './mysql'
+    build:
+      context: ./mysql
     restart: always
     networks:
       - backend
